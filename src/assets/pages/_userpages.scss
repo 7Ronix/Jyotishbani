@@ -1,0 +1,34 @@
+// User Pages
+
+.app-logo {
+  height: $logo-height;
+  width: $logo-width;
+  background: url('../../assets/images/JyotishBani\ Logo\ 5.png');
+}
+
+.app-logo-inverse {
+  height: $logo-height;
+  width: $logo-width;
+  background: url('../../assets/images/JyotishBani\ Logo\ 5.png');
+  height: 82px;
+  width: 360px;
+}
+
+.app-login-box {
+  .app-logo {
+    margin-bottom: $layout-spacer-lg;
+  }
+
+  h4 {
+    margin-bottom: $layout-spacer-x;
+    font-weight: normal;
+
+    div {
+      opacity: .6;
+    }
+
+    span {
+      font-size: $font-size-lg;
+    }
+  }
+}

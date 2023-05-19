@@ -1,0 +1,236 @@
+<!-- <div class="h-100 bg-plum-plate bg-animation" [formGroup]="formGroup" (ngSubmit)="login()">
+  <div class="d-flex h-100 justify-content-center align-items-center">
+    <div class="mx-auto app-login-box col-md-8">
+      <div class="app-logo-inverse mx-auto mb-3"></div>
+      <div class="modal-dialog w-100 mx-auto">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="h5 modal-title text-center">
+              <h4 class="mt-2">
+                <div>Welcome back,</div>
+                <span>Please sign in to your account below.</span>
+              </h4>
+
+            </div>
+            <form>
+              <div id="exampleInputGroup1" role="group" aria-describedby="exampleInputGroup1_BV_description" class="mb-3 form-group">
+                <div>
+                  <input id="exampleInput1" type="email" placeholder="Enter email..." required="required"
+                    aria-required="true" class="form-control" aria-describedby="exampleInputGroup1_BV_description"
+                    formControlName="email">
+                  <small tabindex="-1" id="exampleInputGroup1_BV_description" class="form-text text-muted">We'll never
+                    share your email with anyone else.
+                  </small>
+                </div>
+              </div>
+              <div id="exampleInputGroup2" role="group" class="mb-3 form-group">
+                <div><input id="exampleInput2" type="password" placeholder="Enter password..." required="required"
+                    aria-required="true" class="form-control" formControlName="password"></div>
+              </div>
+              <div class="custom-control custom-checkbox form-check form-group">
+                <input id="exampleCheck" type="checkbox" name="check" autocomplete="off" class="form-check-input"
+                  value="true">
+                <label for="exampleCheck" class="form-label form-check-label">
+                  Keep me logged in
+                </label>
+              </div>
+              <div class="divider form-group"></div>
+              <h6 class="mb-0">
+                No account?
+                <a [routerLink]="['pages/register-boxed']" class="text-primary form-group">Sign up now</a>
+              </h6>
+            </form>
+          </div>
+          <div class="modal-footer clearfix">
+            <div class="float-start"><a [routerLink]="['pages/forgot-password-boxed']"
+                class="btn-lg btn btn-link">Recover
+                Password</a></div>
+            <div class="float-end">
+              <button type="submit" class="btn btn-primary btn-lg" routerLink="/dashboard"
+                [disabled]="formGroup.invalid">Login to Dashboard </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-white opacity-8 mt-3">
+        Copyright © ArchitectUI 2019
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- login.component.html -->
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row" style="margin-left: 95px; margin-right: -84px;">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email:</label>
+        <input type="email" formControlName="email" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password:</label>
+        <input type="password" formControlName="password" required>
+      </div>
+      <button type="submit" routerLink="/dashboard" [disabled]="loginForm.invalid">Login</button>
+      <div class="divider"></div>
+      <h6 class="mb-0">
+        No account?
+        <a [routerLink]="['pages/register-boxed']" class="text-primary">Sign up now</a>
+      </h6>
+    </form>
+  </div>
+</div>
+</div>
+</div> -->
+<!-- <div class="container">
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="row">
+              <h3>Login Here</h3>
+
+              <form action="" method="" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                  <i class="fa-solid fa-envelope"></i>
+                  <label for="email" class="form-label">Email</label>
+                  <input type="text" class="form-control" id="email" placeholder="Email" required>
+                  <p id="e_email"></p>
+
+                  <i class="fa-solid fa-lock"></i>
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="pass" placeholder="password" required>
+                  <p id="e_pass"></p>
+                  <br>
+                <a href="#"><button type="submit" class="btn" name="Submit" [routerLink]="['/dashboard']"  [disabled]="loginForm.invalid" >Login</button></a> 
+                <p>Don't have account?</p> 
+                <a [routerLink]="['pages/register-boxed']" class="text-primary" >Sign up now</a>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<style>
+  .container{
+      padding-top: 31px;
+      align-items: center;
+      margin-left: 477px;
+      width: 30%;
+  }
+  .col-lg-12{
+      background:linear-gradient(90deg,rgb(216, 199, 199),rgb(207, 139, 184));
+      width:100%;
+      box-shadow: 10px;
+      height: 480px;
+      background-repeat: no-repeat;
+      border-radius: 30px;
+      box-shadow: 3px 3px rgb(107, 106, 106);
+      margin-left: 60px;
+      border: 1px solid;
+    }
+    h3{
+      text-align: center;
+      font-size: 35px;
+      font-weight: 700;
+      box-shadow: 10px;
+    }
+    .btn{
+      border: 1px solid black;
+      text-align: center;
+      border: 0px solid black;
+      text-align: center;
+      margin-left: 152px;
+      font-size: 19px;
+      font-weight: 500;
+      width: 120px;
+      height: 44px;
+      margin-top: 13px;
+      border-radius: 23px;
+      background-color: rgb(60, 107, 181);
+      color: rgb(0, 0, 0);
+
+  }
+      .btn:hover{
+          background-color: rgb(20, 66, 141);
+          color: whitesmoke;
+          font-size: 19px;
+          font-weight: 500;
+    }
+    p{
+      color:rgb(193, 183, 183);
+    }
+      </style> -->
+
+
+
+<!-- <div class="h-100 bg-plum-plate bg-animation" [formGroup]="formGroup" (ngSubmit)="login()"> -->
+<div class="d-flex h-100 justify-content-center align-items-center">
+  <div class="mx-auto app-login-box col-md-8">
+    <div class="app-logo-inverse mx-auto mb-3"></div>
+    <div class="modal-dialog w-100 mx-auto">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="h5 modal-title text-center">
+            <h4 class="mt-2">
+              <div>LOGIN</div>
+              <span>JYOTISHBANI</span>
+            </h4>
+          </div>
+
+          <form (submit)="onSubmit()" [formGroup]="formGroup">
+
+            <div id="exampleInputGroup1" role="group" aria-describedby="exampleInputGroup1_BV_description" class="mb-3">
+              <label for="email">Email Address</label>
+              <input [ngClass]="{'is-invalid':submitted && formGroup.controls['email'].errors}" formControlName="email"
+                type="email" class="form-control">
+              <div *ngIf="submitted && formGroup.controls['email'].errors" class="text-danger">
+                <div *ngIf="submitted && formGroup.controls['email'].errors['required']">
+                  Email Address is required
+                </div>
+                <div *ngIf="submitted && formGroup.controls['email'].errors['email']">
+                  Email Address is not Valid
+                </div>
+              </div>
+            </div>
+            <div id="exampleInputGroup2" role="group" class="mb-3">
+              <label for="password">Password</label>
+              <input [ngClass]="{'is-invalid':submitted && formGroup.controls['password'].errors}"
+                formControlName="password" type="password" class="form-control">
+              <div *ngIf="submitted && formGroup.controls['password'].errors" class="text-danger">
+                <div *ngIf="submitted && formGroup.controls['password'].errors['required']">
+                  Password is required
+                </div>
+                <div *ngIf="submitted && formGroup.controls['password'].errors['minlength']">
+                  Password should be atleast 8 characters
+                </div>
+              </div>
+              <div>
+                <a class="text-primary">Forgot Password?</a>
+              </div>
+              <div class="divider"></div>
+              <h6 class="mb-0">
+                Don't have an account?
+                <a [routerLink]="['pages/register-boxed']" class="text-primary">Sign up</a>
+              </h6>
+            </div>
+            <div class="modal-footer clearfix">
+              <div class="float-start"><a [routerLink]="['pages/forgot-password-boxed']"
+                  class="btn-lg btn btn-link">Recover
+                  Password</a></div>
+              <div class="float-end">
+                <button [routerLink]="['/dashboard']" class="btn btn-primary">Login</button>
+              </div>
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+
+      
+    </div>
+    
+  </div>

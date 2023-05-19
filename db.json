@@ -1,0 +1,83 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "Shubhranshu",
+      "lastName": "Das",
+      "dateOfBirth": "17/02/1998",
+      "timeOfBirth": "11:15 Am",
+      "email": "shubhranshudas@gmail.com",
+      "gender": "Male",
+      "mobile": ""
+    },
+    {
+      "id": 1122,
+      "name": "Madhab",
+      "email": "madhab@gmail.com",
+      "mobileNo": "8395734590",
+      "type": "vedic"
+    },
+    {
+      "id": 1234,
+      "name": "Madhab Sahu",
+      "email": "madhab@gmail.com",
+      "mobileNo": "8888888888",
+      "type": "vedic"
+    },
+    {
+      "id": 1235,
+      "firstName": "Sri Ram",
+      "lastName": "Sri Ram",
+      "dateOfBirth": "15/05/1998",
+      "timeOfBirth": "04:02 Am",
+      "email": "sdv@dfgjs.com",
+      "gender": "Male"
+    },
+    {
+      "id": 1236,
+      "firstName": "suygfyuv",
+      "lastName": "sdvuiygfp",
+      "dateOfBirth": "15/05/1998",
+      "timeOfBirth": "04:02 Am",
+      "email": "sriram@gmail.com",
+      "gender": "Male"
+    },
+    {
+      "id": 980940,
+      "name": "hfhjhhfjjfi",
+      "email": "shubhranshu@gmsil.com",
+      "mobileNo": "9089786756",
+      "type": "vedic"
+    },
+    {
+      "id": 12,
+      "name": "Madhabraj",
+      "email": "madhabraj@gmail.com",
+      "mobileNo": "9879878722",
+      "type": "vedic"
+    },
+    {
+      "id": 980941,
+      "title": "Mr",
+      "name": "shubhranshu",
+      "email": "shubhranshu@gmail.com",
+      "password": "4444",
+      "categories": "Tarot Reading",
+      "gender": "male"
+    },
+    {
+      "id": 980942,
+      "title": "Mrs",
+      "name": "Ashaprava",
+      "email": "ashaprabha@gmail.com",
+      "password": "123456",
+      "phoneNo": "9847894540",
+      "categories": "Numerology",
+      "gender": "female"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

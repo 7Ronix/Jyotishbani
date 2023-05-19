@@ -1,0 +1,102 @@
+<nav class="navbar navbar-light bg-primary">
+	<div class="container-fluid">
+		<h1 style="color: aliceblue;">User</h1>
+		<div class="d-flex">
+			<button type="button" (click)="open(content)" (click)="clickAddUser()" data-toggle="modal"
+				data-target="#exampleModal" class="btn btn-success">Add User</button>
+		</div>
+	</div>
+</nav>
+<table class="table mt-3">
+	<thead>
+		<tr>
+			<th scope="col">User ID</th>
+			<th scope="col">First Name</th>
+			<th scope="col">Last Name</th>
+			<th scope="col">Date of Birth</th>
+			<th scope="col">Time of Birth</th>
+			<th scope="col">Email</th>
+			<th scope="col">Gender</th>
+			<th scope="col">Mobile</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let row of userData">
+			<td>{{row.id}}</td>
+			<td>{{row.firstName}}</td>
+			<td>{{row.lastName}}</td>
+			<td>{{row.dateOfBirth}}</td>
+			<td>{{row.timeOfBirth}}</td>
+			<td>{{row.email}}</td>
+			<td>{{row.gender}}</td>
+			<td>{{row.mobile}}</td>
+			<td>
+				<button type="button" (click)="open(content)" (click)="onEdit(row)" data-toggle="modal"
+					data-target="#exampleModal" class="btn btn-info"><i class="fa fa-edit"></i></button>
+				<button (click)="deleteUser(row)" class="btn btn-danger mx-3"><i class="fa fa-trash"></i></button>
+				<!-- <button class="btn btn-secondary" [routerLink]="['/elements/icons']" ><i class="fa fa-eye "></i></button> -->
+				<button class="btn btn-secondary " ><i class="fa fa-eye " [routerLink]="['/components/details/'+row.id]"></i></button>
+			</td>
+
+		</tr>
+
+	</tbody>
+
+</table>
+
+<ng-template #content let-c="close" let-d="dismiss">
+
+	<div *ngIf="submitData">
+		<div class="modal-header">
+			<h4 class="modal-title">User Details</h4>
+			<button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')">
+			</button>
+		</div>
+		<div class="modal-body">
+			<form [formGroup]="formValue">
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputEmail4">First Name</label>
+						<input type="text" formControlName="firstName" class="form-control" id="inputEmail4"
+							placeholder="firstname">
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputEmail4">Last Name</label>
+						<input type="text" formControlName="lastName" class="form-control" id="inputEmail4"
+							placeholder="laststname">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputAddress">Date of Birth</label>
+					<input type="text" formControlName="dateOfBirth" class="form-control" id="inputAddress"
+						placeholder="DD/MM/YYYY">
+				</div>
+				<div class="form-group">
+					<label for="inputAddress2">Time of Birth</label>
+					<input type="text" formControlName="timeOfBirth" class="form-control" id="inputAddress2"
+						placeholder="eg:- 12:00 Am">
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputCity">Email</label>
+						<input type="email" formControlName="email" class="form-control" id="inputEmail4"
+							placeholder="Email">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputState">Gender</label>
+						<select id="inputState" formControlName="gender" class="form-control">
+							<option selected>Choose...</option>
+							<option>Male</option>
+							<option>Female</option>
+						</select>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" (click)="d('Cross click')">Close</button>
+			<button type="button" *ngIf="showUpdate" (click)="postUserDetails()" (click)="onSave()" id="closeModal" class="btn btn-primary" [disabled]="formValue.invalid">Add </button>
+			<button type="button" *ngIf="showAdd" (click)="updateUserDetails()" class="btn btn-primary">Update</button>
+		</div>
+	</div>
+</ng-template>

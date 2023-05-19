@@ -1,0 +1,10 @@
+<h2>User Payment Details</h2>
+<ul>
+  <li *ngFor="let payment of payments">
+    <div>Card Number: {{ payment.cardNumber }}</div>
+    <div>Card Holder: {{ payment.cardHolder }}</div>
+    <div>Expiration Date: {{ payment.expirationDate }}</div>
+    <div>CVV: {{ payment.cvv }}</div>
+    <button (click)="deletePayment(payment)">Delete</button>
+  </li>
+</ul>

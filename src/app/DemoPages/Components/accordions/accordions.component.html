@@ -1,0 +1,135 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1 style="color: aliceblue;">Astrologer</h1>
+    <div class="d-flex">
+      <button type="button" (click)="open(content)" class="btn btn-success" (click)="clickAddAstrologer()"> Add
+        Astrologer </button>
+    </div>
+  </div>
+</nav>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Password </th>
+      <th scope="col">Categories </th>
+      <th scope="col">Gender</th>
+      <th scope="col">Action </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of astrologerData">
+      <td>{{row.title}}</td>
+      <td>{{row.name}}</td>
+      <td>{{row.email}}</td>
+      <td>{{row.phone}}</td>
+      <td>{{row.password}}</td>
+      <td>{{row.categories}}</td>
+      <td>{{row.gender}}</td>
+      <td>
+        <button class="btn btn-warning" (click)="open(content)" (click)="onEdit(row)"><i
+            class="fa fa-edit"></i></button>
+        <button class="btn btn-danger mx-3" (click)="deleteAllAstrologer(row)"><i class="fa fa-trash"></i></button>
+        <button class="btn btn-secondary "><i class="fa fa-eye "
+            [routerLink]="['/components/details/'+row.id]"></i></button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div *ngIf="submitData">
+    <div class="modal-header">
+      <h4 class="modal-title">Astrologer Form</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')">
+      </button>
+    </div>
+    <div class="modal-body">
+
+
+
+      <form [formGroup]="formValue" (submit)="onSubmit()">
+        <!-- <div class="form-group mb-3">
+          <label for="validationCustom04" class="form-label">Title</label>
+          <select formControlName="title" class="form-select form-control" id="validationCustom04" required>
+            <option value="" >Choose Your Title</option>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+          </select>
+        </div> -->
+        <div class="form-group mb-3">
+          <label for="exampleInputName1">Name</label>
+          <input type="text" formControlName="name" class="form-control" id="exampleInputName1"
+            aria-describedby="nameHelp" placeholder="Enter Name">
+
+        </div>
+        <div class="form-group mb-3">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group mb-3">
+          <label for="exampleInputMobileNo1">Phone</label>
+          <input type="text" formControlName="phone" class="form-control" id="exampleInputMobileNo1"
+            aria-describedby="mobileNoHelp" placeholder="Enter Mobile No">
+        </div>
+        <div class="form-group mb-3">
+          <label for="exampleInputType1">Password</label>
+          <input type="text" formControlName="password" class="form-control" id="exampleInputType1"
+            aria-describedby="typeHelp" placeholder="Enter Type">
+        </div>
+        <div class="form-group mb-3">
+          <label for="validationCustom04" class="form-label" >Categories</label>
+          <select formControlName="categories" class="form-select form-control" id="validationCustom04" required>
+            <option vakue="">Choose Your Category</option>
+            <option vakue="HoroscopeReading">Horoscope Reading</option>
+            <option vakue="TarotReading">Tarot Reading</option>
+            <option vakue="vedic">Tarot Reading</option>
+            <option vakue="Numerology">Numerology</option>
+            <option vakue="Palmistry">Palmistry</option>
+            <option vakue="VastuShastra">Vastu Shastra</option>
+            <option vakue="AstrologyConsultation">Astrology Consultation</option>
+            <option vakue="PsychicReading"> Psychic Reading</option>
+            <option vakue="KundliMatching">Kundli Matching</option>
+            <option vakue="CareerGuidance">Career Guidance</option>
+            <option vakue="Compatibility">Love and Relationship Advice</option>
+          </select>
+        </div>
+        <div class="form-group mb-3">
+          <div class="m-1 form-group">Gender</div>
+          <div class="form-check form-check-inline form-group" >
+            <input type="radio" class="form-check-input form-control" value="male" id="male" formControlName="gender">
+            <label class="form-check-label" for="male"> Male</label>
+          </div>
+          <div class="form-check form-check-inline form-group">
+            <input type="radio" class="form-check-input form-control" value="female" id="female" formControlName="gender">
+            <label class="form-check-label " for="female">Female</label>
+          </div>
+          <div class="form-check form-check-inline  form-group">
+            <input type="radio" class="form-check-input form-control" value="others" id="others" formControlName="gender">
+            <label class="form-check-label" for="others">Others</label>
+          </div>
+
+        </div>
+      </form>
+
+
+      
+      <div class="modal-footer form-group">
+        <button type="button" class="btn btn-secondary form-group" data-bs-dismiss="modal"
+          (click)="d('Cross click')">Close</button>
+        <button type="button" id="closeModal" *ngIf="showUpdate" (click)="postAstrologerDetails()"
+        [disabled]="formValue.invalid" class="btn btn-primary form-group">Add</button>
+        <button type="button" id="closeModal" *ngIf="showAdd" (click)="updateAstrologerDetails()"
+          class="btn btn-primary form-group">Update</button>
+      </div>
+
+    </div>
+  </div>
+</ng-template>

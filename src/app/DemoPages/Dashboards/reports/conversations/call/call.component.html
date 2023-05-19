@@ -1,0 +1,165 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+    <li class="nav-item a_4">
+        <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" routerLink="/usercall">
+            <span>User Call</span>
+        </a>
+    </li>
+    <li class="nav-item a_4">
+        <a role="tab" class="nav-link" id="tab-1" data-toggle="tab" href="#tab-content-1" routerLink="/astrologercall">
+            <span>Astrologer Call</span>
+        </a>
+    </li>
+    <!-- <li class="nav-item a_4">
+        <a role="tab" class="nav-link" id="tab-2" data-toggle="tab" href="#tab-content-2">
+            <span>Layout</span>
+        </a>
+    </li> -->
+</ul>
+</nav>
+
+
+<!-- <h1>Call Details</h1>
+<div class="search-details">
+    <input class="form-control"  type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+        placeholder="Start searching for a details by id or name">
+</div>
+
+
+<div>
+    <button type="button" class="btn btn-primary" style="margin-left: 1065px; margin-top: -47px;" (click)="onclick()" ><i class="fa fa-filter "></i></button>
+</div>
+<ng-container *ngIf="!visible">
+<div class="d-flex" >
+    <div class="form-group">
+        <label>From Date: </label>
+        <input class="form-control" style="width: 52%;" (click)="d.toggle()" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" value="'2021-9-4'" ngbDatepicker #d="ngbDatepicker">
+
+      
+      </div>
+      <div class="form-group">
+        <label>To Date: </label>
+        <input class="form-control" style="width: 52%;" placeholder="yyyy-mm-dd"(click)="d.toggle()" name="todp"ngbDatepicker #todate="ngbDatepicker">
+      </div>
+</div>
+</ng-container> -->
+
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex">
+            <div class="search-details m-d">
+                <input class="form-control m-r" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                    placeholder="  Start searching Details by id or name">
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" style="margin-left: 14px;" (click)="onclick()"><i class="fa fa-filter "></i>
+                </button>
+            </div>
+        
+        </div>
+        
+        <ng-container *ngIf="!visible">
+            <div class="d-flex">
+                <div class="form-group" style="margin-right: 7px;">
+                    <label>From Date: </label>
+                    <input class="form-control" [(ngModel)]="searchDate" (click)="d.toggle()" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model"
+                        value="'2021-9-4'" ngbDatepicker #d="ngbDatepicker">
+        
+        
+                </div>
+                <div class="form-group">
+                    <label>To Date: </label>
+                    <input class="form-control" [(ngModel)]="searchDate" placeholder="yyyy-mm-dd" (click)="d.toggle()" name="todp" ngbDatepicker
+                        #todate="ngbDatepicker">
+                </div>
+        
+            </div>
+        </ng-container>
+        
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Duration</th>
+                    <th>Caller</th>
+                    <th>Date</th>
+                    <th>Call Start Time</th>
+                    <th>Call End Time</th>
+        
+        
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let call of callDetails | filter:searchText | filter:searchDate ">
+        
+                    <td>{{ call.id }}</td>
+                    <td>{{ call.duration }}</td>
+                    <td>{{ call.caller }}</td>
+                    <td>{{ call.date }}</td>
+                    <td>{{ call.startTime }}</td>
+                    <td>{{ call.endTime }}</td>
+        
+        
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+  </div>
+
+
+
+<style>
+    /* tab  */
+
+    .a_4 {
+        margin: 5px;
+
+    }
+
+    .nav-link :hover {
+        color: #ededed;
+        border: 10px;
+        background-color: #3f6ad8;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+
+
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+
+
+    .form-group {
+        margin-bottom: 5px;
+    }
+
+    .d-flex {
+        display: flex;
+        margin-right: 5px;
+    }
+
+    .m-d {
+        margin-left: 430px;
+    }
+
+    .m-r {
+        margin-left: 240px;
+        width: 395px;
+    }
+</style>
